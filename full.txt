@@ -1,0 +1,2328 @@
+AndroidManifest,xml
+
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="Plant Pulse"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MyApplication"
+        tools:targetApi="31">
+        <activity
+            android:name=".Sensor"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".MyAudioRecorderActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Hardware"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Animationmy"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Graphics"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".VideoRecorderActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Login"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".SignUp"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".ForgotPass"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Mediaplayer"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".SettingsActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".DatabaseHelper"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".SQLite"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".SMSSenderReceiver"
+            android:exported="true">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".SMSsender"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Googlemaps"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".geocoder"
+            android:exported="true"
+            android:label="@string/title_activity_geocoder"
+            android:theme="@style/Theme.MyApplication.NoActionBar" />
+        <activity
+            android:name=".MainActivity11"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.MyApplication.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".MainActivity10"
+            android:exported="false"
+            android:label="@string/title_activity_main10"
+            android:theme="@style/Theme.MyApplication.NoActionBar">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".MainActivity9"
+            android:exported="false"
+            android:label="@string/title_activity_main9"
+            android:theme="@style/Theme.MyApplication.NoActionBar">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".MainActivity8_context"
+            android:exported="false"
+            android:label="@string/title_activity_main_activity8_context"
+            android:theme="@style/Theme.MyApplication.NoActionBar">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".MainActivity7_menu"
+            android:exported="false"
+            android:label="@string/title_activity_main_activity7_menu"
+            android:theme="@style/Theme.MyApplication.NoActionBar">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".MainActivity6"
+            android:exported="false"
+            android:label="@string/title_activity_main6"
+            android:theme="@style/Theme.MyApplication.NoActionBar">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".social_network"
+            android:exported="false"
+            android:label="@string/title_activity_social_network"
+            android:theme="@style/Theme.MyApplication.NoActionBar">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".MainActivity4"
+            android:exported="false"
+            android:label="@string/title_activity_main4"
+            android:theme="@style/Theme.MyApplication.NoActionBar">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".MainActivity3"
+            android:exported="false"
+            android:label="@string/title_activity_main3"
+            android:theme="@style/Theme.MyApplication.NoActionBar">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".MainActivity2"
+            android:exported="false"
+            android:label="@string/title_activity_main2"
+            android:theme="@style/Theme.MyApplication.NoActionBar">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.MyApplication.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyB-OYrdYFMIarjpYENzUeTRczykieSC0Xk" />
+
+        <receiver android:name=".NotificationDismissReceiver" />
+        <receiver
+            android:name=".SMSSenderReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="SEND_SMS" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".BootReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>
+
+
+googlemaps.java
+
+package com.example.googlemaps;
+
+import android.location.Address;
+import android.location.Geocoder;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapView;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
+
+import java.io.IOException;
+import java.util.List;
+import java.util.Locale;
+
+public class  MainActivity extends AppCompatActivity implements OnMapReadyCallback {
+
+    private MapView mapView;
+    private GoogleMap googleMap;
+    Button searchButton;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        mapView = findViewById(R.id.mapView);
+        mapView.onCreate(savedInstanceState);
+        mapView.getMapAsync(this);
+        EditText searchEditText = findViewById(R.id.searchEditText);
+
+        searchButton = findViewById(R.id.searchButton);
+
+        searchButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String searchString = searchEditText.getText().toString().trim();
+                if (!searchString.isEmpty()) {
+                    Geocoder geocoder = new Geocoder(MainActivity.this, Locale.getDefault());
+                    try {
+                        List<Address> addresses = geocoder.getFromLocationName(searchString, 1);
+                        if (addresses != null && addresses.size() > 0) {
+                            Address address = addresses.get(0);
+                            LatLng location = new LatLng(address.getLatitude(), address.getLongitude());
+                            googleMap.clear(); // Clear previous markers
+                            googleMap.addMarker(new MarkerOptions().position(location).title(searchString));
+                            googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location, 15));
+                        } else {
+                            Toast.makeText(MainActivity.this, "Location not found", Toast.LENGTH_SHORT).show();
+                        }
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                } else {
+                    Toast.makeText(MainActivity.this, "Please enter an address", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+    }
+    @Override
+    public void onMapReady(GoogleMap map) {
+        googleMap = map;
+
+        // Initialize default location (e.g., your user's location)
+        LatLng defaultLocation = new LatLng(9.8821, 78.0816); // Example coordinates (Mountain View, CA)
+
+        // Add marker to default location
+        googleMap.addMarker(new MarkerOptions().position(defaultLocation).title("Thiagarajar college of enginering"));
+
+        // Move camera to default location
+        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(defaultLocation, 15));
+
+        // Enable user interaction with the map
+        googleMap.getUiSettings().setZoomControlsEnabled(true);
+
+        // Reverse geocoding to fetch complete address
+        Geocoder geocoder = new Geocoder(MainActivity.this, Locale.getDefault());
+        try {
+            List<Address> addresses = geocoder.getFromLocation(defaultLocation.latitude, defaultLocation.longitude, 1);
+            if (addresses != null && addresses.size() > 0) {
+                Address address = addresses.get(0);
+                String completeAddress = address.getAddressLine(0); // Get the first line of the address
+                Log.d("ReverseGeocode", "Complete Address: " + completeAddress); // Add this line for logging
+                Toast.makeText(MainActivity.this, "Complete Address: " + completeAddress, Toast.LENGTH_LONG).show();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mapView.onResume();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        mapView.onPause();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mapView.onDestroy();
+    }
+
+    @Override
+    public void onLowMemory() {
+        super.onLowMemory();
+        mapView.onLowMemory();
+    }
+}
+
+
+xml code 
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/mapView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:apiKey="AIzaSyAC5ebvdYeLxYBtdCNzeTFuiPXn1J1mpIE"
+        android:clickable="true"
+        tools:ignore="MissingClass" />
+
+    <EditText
+        android:id="@+id/searchEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_margin="16dp"
+        android:hint="Enter address" />
+
+    <Button
+        android:id="@+id/searchButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"
+        android:text="Find Nursery" />
+
+</RelativeLayout>
+
+
+Audio rec.java
+
+package com.example.recorder;
+
+
+
+import android.Manifest;
+import android.content.pm.PackageManager;
+import android.media.MediaPlayer;
+import android.media.MediaRecorder;
+import android.os.Bundle;
+import android.os.Environment;
+import android.widget.Button;
+import android.widget.Toast;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+import java.io.File;
+import java.io.IOException;
+
+public class MainActivity extends AppCompatActivity {
+    private static final int REQUEST_PERMISSION_CODE = 1000;
+    Button play, record, stop, pause, resume;
+    MediaRecorder mediaRecorder;
+    MediaPlayer mediaPlayer;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        if (!checkPermissions()) {
+            requestPermissions();
+        }
+
+        play = findViewById(R.id.play_btn);
+        record = findViewById(R.id.record_btn);
+        stop = findViewById(R.id.stop_btn);
+        pause = findViewById(R.id.pause_btn);
+        resume = findViewById(R.id.res_btn);
+
+        play.setOnClickListener(v -> {
+            try {
+                mediaPlayer = new MediaPlayer();
+                mediaPlayer.setDataSource(Helper());
+                mediaPlayer.prepare();
+                mediaPlayer.start();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+
+        pause.setOnClickListener(v -> {
+            if (mediaRecorder != null) {
+                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+                    mediaRecorder.pause();
+                    Toast.makeText(this, "Recording Paused", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        resume.setOnClickListener(v -> {
+            if (mediaRecorder != null) {
+                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+                    mediaRecorder.resume();
+                    Toast.makeText(this, "Recording Resumed", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        record.setOnClickListener(v -> {
+            if (checkPermissions()) {
+                startRecording();
+            } else {
+                requestPermissions();
+            }
+        });
+
+        stop.setOnClickListener(v -> {
+            if (mediaRecorder != null) {
+                mediaRecorder.stop();
+                mediaRecorder.release();
+                mediaRecorder = null;
+                Toast.makeText(this, "Recording Stopped", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private boolean checkPermissions() {
+        int result = ContextCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO);
+        int result1 = ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE);
+        return result == PackageManager.PERMISSION_GRANTED && result1 == PackageManager.PERMISSION_GRANTED;
+    }
+
+    private void requestPermissions() {
+        ActivityCompat.requestPermissions(this, new String[]{
+                        Manifest.permission.RECORD_AUDIO,
+                        Manifest.permission.WRITE_EXTERNAL_STORAGE},
+                REQUEST_PERMISSION_CODE);
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        switch (requestCode) {
+            case REQUEST_PERMISSION_CODE:
+                if (grantResults.length > 0) {
+                    boolean recordPermission = grantResults[0] == PackageManager.PERMISSION_GRANTED;
+                    boolean writePermission = grantResults[1] == PackageManager.PERMISSION_GRANTED;
+                    if (recordPermission && writePermission) {
+                        Toast.makeText(this, "Permission Granted", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(this, "Permission Denied", Toast.LENGTH_SHORT).show();
+                    }
+                }
+                break;
+        }
+    }
+
+    private void startRecording() {
+        try {
+            mediaRecorder = new MediaRecorder();
+            mediaRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
+            mediaRecorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
+            mediaRecorder.setOutputFile(Helper());
+            mediaRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AAC);
+            mediaRecorder.prepare();
+            mediaRecorder.start();
+            Toast.makeText(this, "Recording Started", Toast.LENGTH_SHORT).show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private String Helper() {
+        File music = getExternalFilesDir(Environment.DIRECTORY_MUSIC);
+        if (music != null && !music.exists()) {
+            music.mkdirs();
+        }
+        File file = new File(music, "record.mp3");
+        return file.getPath();
+    }
+}
+
+
+xml
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/layout1"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/record_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginTop="20sp"
+            android:layout_gravity="center"
+            android:background="@color/purple_200"
+            style="@android:style/Widget.Button"
+            android:textColor="#ffffff"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:text="Record" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/play_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginTop="20sp"
+            android:layout_marginStart="25sp"
+            android:layout_gravity="center"
+            android:background="@color/purple_200"
+            style="@android:style/Widget.Button"
+            android:textColor="#ffffff"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:text="Play" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/layout1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/stop_btn"
+            style="@android:style/Widget.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="20sp"
+            android:layout_marginTop="20sp"
+            android:background="@color/purple_200"
+            android:text="Stop"
+            android:textColor="#ffffff"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/res_btn"
+            style="@android:style/Widget.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="40sp"
+            android:layout_marginTop="20sp"
+            android:background="@color/purple_200"
+            android:text="Resume"
+            android:textColor="#ffffff"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/pause_btn"
+            style="@android:style/Widget.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="40sp"
+            android:layout_marginTop="20sp"
+            android:background="@color/purple_200"
+            android:text="Pause"
+            android:textColor="#ffffff"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+contextmenu.java
+package com.example.testing;
+
+import android.graphics.Color;
+import android.os.Bundle;
+import android.view.ContextMenu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
+import androidx.appcompat.app.AppCompatActivity;
+
+public class Context_menu extends AppCompatActivity {
+    TextView textView;
+    RelativeLayout relativeLayout;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_context_menu);
+
+        // Link those objects with their respective id's that we have given in .XML file
+        textView = (TextView) findViewById(R.id.textView);
+        relativeLayout = (RelativeLayout) findViewById(R.id.relLayout);
+
+        // here you have to register a view for context menu you can register any view
+        // like listview, image view, textview, button etc
+        registerForContextMenu(textView);
+
+    }
+
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(menu, v, menuInfo);
+        // you can set menu header with title icon etc
+        menu.setHeaderTitle("Choose a color");
+        // add menu items
+        menu.add(0, v.getId(), 0, "Yellow");
+        menu.add(0, v.getId(), 0, "Gray");
+        menu.add(0, v.getId(), 0, "Cyan");
+    }
+
+    // menu item select listener
+    @Override
+    public boolean onContextItemSelected(MenuItem item) {
+        if (item.getTitle() == "Yellow") {
+            relativeLayout.setBackgroundColor(Color.YELLOW);
+        } else if (item.getTitle() == "Gray") {
+            relativeLayout.setBackgroundColor(Color.GRAY);
+        } else if (item.getTitle() == "Cyan") {
+            relativeLayout.setBackgroundColor(Color.CYAN);
+        }
+        return true;
+    }
+}
+
+
+xml
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Relative Layout to display all the details -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:padding="16dp"
+    tools:context=".Context_menu">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="Long press me!"
+        android:textColor="#000"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+</RelativeLayout>
+
+
+listview.java
+package com.example.testing;
+
+import androidx.appcompat.app.AppCompatActivity;
+import android.os.Bundle;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.SearchView;
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class Listview extends AppCompatActivity {
+
+    ListView l;
+    SearchView searchView;
+    ArrayAdapter<String> arr;
+    String tutorials[] = {
+            "Algorithms", "Data Structures",
+            "Languages", "Interview Corner",
+            "GATE", "ISRO CS",
+            "UGC NET CS", "CS Subjects",
+            "Web Technologies"
+    };
+    ArrayList<String> tutorialsList;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_listview);
+
+        l = findViewById(R.id.listview);
+        searchView = findViewById(R.id.searchView);
+
+        tutorialsList = new ArrayList<>(Arrays.asList(tutorials));
+        arr = new ArrayAdapter<>(this, R.layout.list_item, R.id.textView, tutorialsList);
+        l.setAdapter(arr);
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                arr.getFilter().filter(newText);
+                return false;
+            }
+        });
+    }
+}
+
+xml
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Listview">
+
+    <SearchView
+        android:id="@+id/searchView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:queryHint="Search..."/>
+
+    <ListView
+        android:id="@+id/listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>
+
+list_item.xml
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:layout_marginStart="16dp"/>
+</LinearLayout>
+
+
+
+Notification.java
+
+package com.example.testing;
+
+
+import android.annotation.SuppressLint;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.graphics.Color;
+import android.os.Build;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+
+public class Notification extends AppCompatActivity {
+
+    private static final String CHANNEL_ID = "channel_id";
+    private static final String CHANNEL_NAME = "Channel Name";
+    private BroadcastReceiver dismissReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            if ("DISMISS_ACTION".equals(intent.getAction())) {
+                // Handle dismiss action here
+                NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+                notificationManager.cancel(0); // Dismiss the notification with the given ID
+            }
+        }
+    };
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+
+        setContentView(R.layout.activity_notification);
+        createNotificationChannel();
+        @SuppressLint({"MissingInflatedId", "LocalSuppress"})
+        Button button = findViewById(R.id.notification_button);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                displayNotification();
+            }
+        });
+        registerReceiver(dismissReceiver, new IntentFilter("DISMISS_ACTION"));
+
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        // Unregister the dismiss receiver
+        unregisterReceiver(dismissReceiver);
+    }
+    private void createNotificationChannel() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            NotificationChannel channel = new NotificationChannel(
+                    CHANNEL_ID,
+                    CHANNEL_NAME,
+                    NotificationManager.IMPORTANCE_DEFAULT
+            );
+            channel.enableLights(true);
+            channel.setLightColor(Color.RED);
+            channel.enableVibration(true);
+            channel.setDescription("This is a notification channel");
+
+            NotificationManager notificationManager = getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(channel);
+        }
+    }
+
+    private void displayNotification() {
+        // Create an Intent for the action to open an activity
+        Intent intent = new Intent(this, Listview.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_ONE_SHOT);
+
+        // Create a notification action for opening an activity
+        NotificationCompat.Action openAction = new NotificationCompat.Action.Builder(
+                R.drawable.shiv,
+                "Open Activity",
+                pendingIntent
+        ).build();
+
+        // Create a notification action for dismissing the notification
+       // Intent dismissIntent = new Intent(this, NotificationDismissReceiver.class);
+        //dismissIntent.setAction("DISMISS_ACTION");
+        /*PendingIntent dismissPendingIntent = PendingIntent.getBroadcast(this, 0, dismissIntent, PendingIntent.FLAG_ONE_SHOT);
+
+        NotificationCompat.Action dismissAction = new NotificationCompat.Action.Builder(
+                R.drawable.shiv,
+                "Dismiss",
+                dismissPendingIntent
+        ).build();*/
+
+        // Create the notification
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID)
+                .setSmallIcon(R.drawable.shiv)
+                .setContentTitle("Plant Care System")
+                .setContentText("Time to water your plants!")
+                .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+                .addAction(openAction);
+                //.addAction(dismissAction);
+
+        // Display the notification
+        NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        notificationManager.notify(0, builder.build());
+    }
+
+
+}
+
+xml
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".Notification"
+    >
+
+    <Button
+        android:id="@+id/notification_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="Set reminder" />
+
+</RelativeLayout>
+
+
+res/menu/menu_options.xml
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<item
+    android:id="@+id/home"
+    android:title="Home"></item>
+    <item
+        android:id="@+id/help"
+        android:title="Help"></item>
+    <item
+        android:id="@+id/Search"
+        android:title="Search"></item>
+</menu>
+
+
+popupmenu.java
+
+package com.example.testing;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.annotation.SuppressLint;
+import android.os.Bundle;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.PopupMenu;
+import android.widget.Toast;
+
+public class Popupmenu extends AppCompatActivity {
+    Button button;
+
+    @SuppressLint("MissingInflatedId")
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_popupmenu);
+
+        // Referencing and Initializing the button
+        button = (Button) findViewById(R.id.clickBtn);
+
+        // Setting onClick behavior to the button
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Initializing the popup menu and giving the reference as current context
+                PopupMenu popupMenu = new PopupMenu(Popupmenu.this, button);
+
+                // Inflating popup menu from popup_menu.xml file
+                popupMenu.getMenuInflater().inflate(R.menu.menu_options, popupMenu.getMenu());
+                popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                    @Override
+                    public boolean onMenuItemClick(MenuItem menuItem) {
+                        // Toast message on menu item clicked
+                        Toast.makeText(Popupmenu.this, "You Clicked " + menuItem.getTitle(), Toast.LENGTH_SHORT).show();
+                        return true;
+                    }
+                });
+                // Showing the popup menu
+                popupMenu.show();
+            }
+        });
+    }
+}
+
+xml
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Popupmenu">
+
+    <Button
+        android:id="@+id/clickBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#0F9D58"
+        android:text="Click Me"
+        android:textColor="#ffffff"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+datepicker timepicker
+
+java
+
+package com.example.myapplication;
+
+import android.annotation.SuppressLint;
+import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import androidx.appcompat.widget.Toolbar;
+
+import android.widget.Button;
+import android.widget.DatePicker;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.ProgressBar;
+import android.widget.TextView;
+import android.widget.TimePicker;
+import android.widget.Toast;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.view.View;
+
+import androidx.appcompat.widget.Toolbar;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.navigation.ui.AppBarConfiguration;
+import androidx.navigation.ui.NavigationUI;
+
+
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Locale;
+
+public class MainActivity7_menu extends AppCompatActivity {
+
+
+    private ImageView image_view_plant;
+    private EditText edittextcaption;
+    private Button btnUpload;
+    private TextView tvSelectedDateTime;
+    private ProgressBar progress_bar;
+
+    private Calendar selectedDateTime;
+    @SuppressLint("MissingInflatedId")
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+
+        setContentView(R.layout.activity_main_activity7_menu);
+        setTitle("Plant Social Network");
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        image_view_plant = findViewById(R.id.image_view_plant);
+        edittextcaption= findViewById(R.id.edittextcaption);
+        btnUpload = findViewById(R.id.btnUpload);
+        tvSelectedDateTime = findViewById(R.id.tv_selected_datetime);
+        progress_bar = findViewById(R.id.progress_bar);
+
+        // Initialize selectedDateTime with current date and time
+        selectedDateTime = Calendar.getInstance();
+        // Set click listener for the upload button
+        btnUpload.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                uploadPlant();
+            }
+        });
+        FloatingActionButton fab = findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Show DatePicker
+                showDatePicker();
+            }
+        });
+    }
+    private void showDatePicker() {
+        // Get current year, month, and day
+        int year = selectedDateTime.get(Calendar.YEAR);
+        int month = selectedDateTime.get(Calendar.MONTH);
+        int dayOfMonth = selectedDateTime.get(Calendar.DAY_OF_MONTH);
+
+        // Create DatePickerDialog
+        DatePickerDialog datePickerDialog = new DatePickerDialog(this,
+                new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                        // Update selectedDateTime
+                        selectedDateTime.set(year, monthOfYear, dayOfMonth);
+                        showTimePicker();
+                    }
+                }, year, month, dayOfMonth);
+
+        // Show DatePickerDialog
+        datePickerDialog.show();
+    }
+
+    private void showTimePicker() {
+        // Get current hour and minute
+        int hour = selectedDateTime.get(Calendar.HOUR_OF_DAY);
+        int minute = selectedDateTime.get(Calendar.MINUTE);
+
+        // Create TimePickerDialog
+        TimePickerDialog timePickerDialog = new TimePickerDialog(this,
+                new TimePickerDialog.OnTimeSetListener() {
+                    @Override
+                    public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                        // Update selectedDateTime
+                        selectedDateTime.set(Calendar.HOUR_OF_DAY, hourOfDay);
+                        selectedDateTime.set(Calendar.MINUTE, minute);
+                        updateSelectedDateTimeTextView();
+                    }
+                }, hour, minute, false);
+
+        // Show TimePickerDialog
+        timePickerDialog.show();
+    }
+
+    private void updateSelectedDateTimeTextView() {
+        // Format selectedDateTime and set text to TextView
+        SimpleDateFormat sdf = new SimpleDateFormat("EEE, MMM d, yyyy 'at' hh:mm a", Locale.getDefault());
+        String formattedDateTime = sdf.format(selectedDateTime.getTime());
+        tvSelectedDateTime.setText(formattedDateTime);
+    }
+    private void uploadPlant() {
+        // Get caption text
+        String caption = edittextcaption.getText().toString().trim();
+
+        // Perform validation
+        if (caption.isEmpty()) {
+            Toast.makeText(this, "Please enter a caption", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+
+        Toast.makeText(this, "Plant uploaded with caption: " + caption, Toast.LENGTH_SHORT).show();
+        // Clear input fields after upload
+        edittextcaption.setText("");
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main1, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+
+        switch (id) {
+            case R.id.menu_profile:
+                // Handle My Plant Profile
+                openPlantProfile();
+                return true;
+            case R.id.menu_gallery:
+                // Handle Plant Gallery
+                openPlantGallery();
+                return true;
+            case R.id.menu_share:
+                // Handle Share Plant
+                sharePlant();
+                return true;
+            case R.id.menu_challenges:
+                // Handle Plant Challenges
+                openPlantChallenges();
+                return true;
+            case R.id.menu_achievements:
+                // Handle My Achievements
+                openAchievements();
+                return true;
+            case R.id.menu_leaderboard:
+                // Handle Leaderboard
+                openLeaderboard();
+                return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    private void openPlantProfile() {
+        // Navigate to Plant Profile activity
+        Toast.makeText(this, "Opening My Plant Profile", Toast.LENGTH_SHORT).show();
+
+    }
+
+    private void openPlantGallery() {
+        // Navigate to Plant Gallery activity
+        Toast.makeText(this, "Opening Plant Gallery", Toast.LENGTH_SHORT).show();
+
+    }
+
+    private void sharePlant() {
+        // Handle Share Plant action
+        Toast.makeText(this, "Sharing Plant", Toast.LENGTH_SHORT).show();
+        // Implement sharing functionality here
+    }
+
+    private void openPlantChallenges() {
+        // Navigate to Plant Challenges activity
+        Toast.makeText(this, "Opening Plant Challenges", Toast.LENGTH_SHORT).show();
+
+    }
+
+    private void openAchievements() {
+        // Navigate to Achievements activity
+        Toast.makeText(this, "Opening My Achievements", Toast.LENGTH_SHORT).show();
+        // Intent intent = new Intent(this, AchievementsActivity.class);
+        // startActivity(intent);
+    }
+
+    private void openLeaderboard() {
+        // Navigate to Leaderboard activity
+        Toast.makeText(this, "Opening Leaderboard", Toast.LENGTH_SHORT).show();
+        // Intent intent = new Intent(this, LeaderboardActivity.class);
+        // startActivity(intent);
+    }
+
+
+
+}
+
+
+xml
+
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity7_menu">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/Theme.MyApplication.AppBarOverlay">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/Theme.MyApplication.PopupOverlay" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        tools:context=".MainActivity">
+
+        <!-- Plant Image -->
+
+        <!-- Caption -->
+
+        <!-- Upload Button -->
+
+
+
+        <EditText
+            android:id="@+id/edittextcaption"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/image_view_plant"
+            android:layout_marginTop="128dp"
+            android:layout_marginBottom="16dp"
+            android:hint="Enter Caption" />
+
+        <Button
+            android:id="@+id/btnUpload"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/edittextcaption"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="57dp"
+            android:layout_marginEnd="33dp"
+            android:text="Upload" />
+
+        <!-- Selected Date and Time TextView -->
+        <TextView
+            android:id="@+id/tv_selected_datetime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btnUpload"
+            android:layout_marginTop="16dp"
+            android:text="Select Date and Time: "
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:visibility="visible" />
+
+        <!-- Progress Bar -->
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_selected_datetime"
+            android:layout_marginTop="16dp"
+            android:visibility="visible" />
+        <FrameLayout
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="150dp"
+            android:layout_centerInParent="true">
+
+            <!-- ImageButton with a placeholder image (replace with your actual image) -->
+        </FrameLayout>
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/progress_bar"
+            android:layout_gravity="end"
+            android:layout_marginTop="156dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:scaleType="fitCenter"
+            android:src="@drawable/noti" />
+
+    </RelativeLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="@dimen/fab_margin"
+        android:layout_marginBottom="16dp"
+        app:srcCompat="@android:drawable/ic_dialog_email" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+animation 
+xml
+
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+
+    <ImageView
+        android:id="@id/imageView"
+        android:layout_width="354dp"
+        android:layout_height="232dp"
+        android:src="@drawable/plantu"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.062" />
+
+    <Button
+        android:id="@+id/btnFadeIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fade In"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.08"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.405" />
+
+    <Button
+        android:id="@+id/btnFadeOut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fade Out"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.468"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.404" />
+
+    <Button
+        android:id="@+id/btnCrossFade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cross Fade"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.083"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.534" />
+
+    <Button
+        android:id="@+id/btnBlink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Blink"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.464"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.656" />
+
+    <Button
+        android:id="@+id/btnZoomIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Zoom In"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.869"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.913" />
+
+    <Button
+        android:id="@+id/btnZoomOut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Zoom Out"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.082"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.913" />
+
+    <Button
+        android:id="@+id/btnRotate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rotate"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.876"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.656" />
+
+    <Button
+        android:id="@+id/btnMove"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Move"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.913" />
+
+    <Button
+        android:id="@+id/btnSlideUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Slide Up"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.213"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.793" />
+
+    <Button
+        android:id="@+id/btnSlideDown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Slide Down"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.835"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.533" />
+
+    <Button
+        android:id="@+id/btnBounce"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bounce"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.08"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.656" />
+
+    <Button
+        android:id="@+id/btnSequential"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sequential"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.781"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.793" />
+
+    <Button
+        android:id="@+id/btnTogether"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Together"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.404" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+java
+
+package com.example.myapplication;
+
+import android.os.Bundle;
+import android.view.View;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
+import android.view.animation.AnimationSet;
+import android.view.animation.RotateAnimation;
+import android.view.animation.ScaleAnimation;
+import android.view.animation.TranslateAnimation;
+import android.widget.Button;
+import android.widget.ImageView;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+public class Animationmy extends AppCompatActivity {
+
+    private ImageView imageView;
+    private Button btnFadeIn, btnFadeOut, btnCrossFade, btnBlink, btnZoomIn, btnZoomOut,
+            btnRotate, btnMove, btnSlideUp, btnSlideDown, btnBounce, btnSequential, btnTogether;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_animation);
+
+        imageView = findViewById(R.id.imageView);
+        btnFadeIn = findViewById(R.id.btnFadeIn);
+        btnFadeOut = findViewById(R.id.btnFadeOut);
+        btnCrossFade = findViewById(R.id.btnCrossFade);
+        btnBlink = findViewById(R.id.btnBlink);
+        btnZoomIn = findViewById(R.id.btnZoomIn);
+        btnZoomOut = findViewById(R.id.btnZoomOut);
+        btnRotate = findViewById(R.id.btnRotate);
+        btnMove = findViewById(R.id.btnMove);
+        btnSlideUp = findViewById(R.id.btnSlideUp);
+        btnSlideDown = findViewById(R.id.btnSlideDown);
+        btnBounce = findViewById(R.id.btnBounce);
+        btnSequential = findViewById(R.id.btnSequential);
+        btnTogether = findViewById(R.id.btnTogether);
+
+        btnFadeIn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                fadeIn();
+            }
+        });
+
+        btnFadeOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                fadeOut();
+            }
+        });
+
+        btnCrossFade.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                crossFade();
+            }
+        });
+
+        // Implement click listeners and animation methods for all buttons here
+        btnBlink.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                blink();
+            }
+        });
+
+        btnZoomIn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                zoomIn();
+            }
+        });
+
+        btnZoomOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                zoomOut();
+            }
+        });
+
+        btnRotate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rotate();
+            }
+        });
+
+        btnMove.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                move();
+            }
+        });
+
+        btnSlideUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                slideUp();
+            }
+        });
+
+        btnSlideDown.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                slideDown();
+            }
+        });
+
+        btnBounce.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bounce();
+            }
+        });
+
+        btnSequential.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sequentialAnimation();
+            }
+        });
+
+        btnTogether.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                togetherAnimation();
+            }
+        });
+    }
+
+    private void fadeIn() {
+        Animation fadeIn = new AlphaAnimation(0, 1);
+        fadeIn.setDuration(1000);
+        imageView.startAnimation(fadeIn);
+    }
+
+    private void fadeOut() {
+        Animation fadeOut = new AlphaAnimation(1, 0);
+        fadeOut.setDuration(1000);
+        imageView.startAnimation(fadeOut);
+    }
+
+    private void crossFade() {
+        Animation fadeIn = new AlphaAnimation(0, 1);
+        fadeIn.setDuration(1000);
+
+        Animation fadeOut = new AlphaAnimation(1, 0);
+        fadeOut.setDuration(1000);
+
+        fadeIn.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                imageView.startAnimation(fadeOut);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+            }
+        });
+
+        fadeOut.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                imageView.startAnimation(fadeIn);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+            }
+        });
+
+        imageView.startAnimation(fadeOut);
+    }
+
+    private void blink() {
+        Animation blink = new AlphaAnimation(1, 0);
+        blink.setDuration(300); // Adjust duration for desired blink speed
+        blink.setRepeatCount(4); // Adjust for number of blinks
+        blink.setRepeatMode(Animation.REVERSE);
+        imageView.startAnimation(blink);
+    }
+
+    private void zoomIn() {
+        float pivotX = imageView.getWidth() / 2.0f;
+        float pivotY = imageView.getHeight() / 2.0f;
+        ScaleAnimation zoomIn = new ScaleAnimation(1.0f, 1.5f, 1.0f, 1.5f, pivotX, pivotY);
+        zoomIn.setDuration(1000);
+        imageView.startAnimation(zoomIn);
+    }
+
+    private void zoomOut() {
+        float pivotX = imageView.getWidth() / 2.0f;
+        float pivotY = imageView.getHeight() / 2.0f;
+        ScaleAnimation zoomOut = new ScaleAnimation(1.5f, 1.0f, 1.5f, 1.0f, pivotX, pivotY);
+        zoomOut.setDuration(1000);
+        imageView.startAnimation(zoomOut);
+    }
+
+    private void rotate() {
+        RotateAnimation rotate = new RotateAnimation(0, 360,
+                RotateAnimation.RELATIVE_TO_SELF, 0.5f, RotateAnimation.RELATIVE_TO_SELF, 0.5f);
+        rotate.setDuration(1000);
+        imageView.startAnimation(rotate);
+    }
+
+    private void move() {
+        float fromXDelta = 100; // Adjust for desired horizontal movement
+        float fromYDelta = 0;   // Adjust for desired vertical movement
+        float toXDelta = 0;
+        float toYDelta = 100;  // Adjust for desired vertical movement
+        TranslateAnimation move = new TranslateAnimation(Animation.ABSOLUTE, fromXDelta,
+                Animation.ABSOLUTE, toXDelta, Animation.ABSOLUTE, fromYDelta, Animation.ABSOLUTE, toYDelta);
+        move.setDuration(1000);
+        imageView.startAnimation(move);
+    }
+
+    private void slideUp() {
+        float fromYDelta = 0;
+        float toYDelta = -imageView.getHeight(); // Move image off-screen
+        TranslateAnimation slideUp = new TranslateAnimation(Animation.ABSOLUTE, 0,
+                Animation.ABSOLUTE, 0, Animation.ABSOLUTE, fromYDelta, Animation.ABSOLUTE, toYDelta);
+        slideUp.setDuration(1000);
+        imageView.startAnimation(slideUp);
+    }
+
+    private void slideDown() {
+        float fromYDelta = imageView.getHeight(); // Move image from off-screen
+        float toYDelta = 0;
+        TranslateAnimation slideDown = new TranslateAnimation(Animation.ABSOLUTE, 0,
+                Animation.ABSOLUTE, 0, Animation.ABSOLUTE, fromYDelta, Animation.ABSOLUTE, toYDelta);
+        slideDown.setDuration(1000);
+        imageView.startAnimation(slideDown);
+    }
+
+    private void bounce() {
+        AnimationSet bounce = new AnimationSet(false);
+        TranslateAnimation translateY = new TranslateAnimation(Animation.ABSOLUTE, 0,
+                Animation.ABSOLUTE, 0, Animation.ABSOLUTE, 0, Animation.ABSOLUTE, -100);
+        translateY.setDuration(500);
+        translateY.setRepeatCount(4);
+        translateY.setRepeatMode(Animation.REVERSE);
+        bounce.addAnimation(translateY);
+        imageView.startAnimation(bounce);
+    }
+
+    private void sequentialAnimation() {
+        AnimationSet sequential = new AnimationSet(false);
+
+        Animation fadeIn = new AlphaAnimation(0, 1);
+        fadeIn.setDuration(1000);
+
+        RotateAnimation rotate = new RotateAnimation(0, 360,
+                RotateAnimation.RELATIVE_TO_SELF, 0.5f, RotateAnimation.RELATIVE_TO_SELF, 0.5f);
+        rotate.setDuration(1000);
+
+        ScaleAnimation zoomOut = new ScaleAnimation(1.5f, 1.0f, 1.5f, 1.0f,
+                ScaleAnimation.RELATIVE_TO_SELF, 0.5f, ScaleAnimation.RELATIVE_TO_SELF, 0.5f);
+        zoomOut.setDuration(1000);
+
+        sequential.addAnimation(fadeIn);
+        sequential.addAnimation(rotate);
+        sequential.addAnimation(zoomOut);
+
+        imageView.startAnimation(sequential);
+    }
+
+    private void togetherAnimation() {
+        AnimationSet together = new AnimationSet(true); // Animate together
+
+        Animation fadeIn = new AlphaAnimation(0, 1);
+        fadeIn.setDuration(1000);
+
+        RotateAnimation rotate = new RotateAnimation(0, 360,
+                RotateAnimation.RELATIVE_TO_SELF, 0.5f, RotateAnimation.RELATIVE_TO_SELF, 0.5f);
+        rotate.setDuration(1000);
+
+        ScaleAnimation zoomIn = new ScaleAnimation(1.0f, 1.5f, 1.0f, 1.5f,
+                ScaleAnimation.RELATIVE_TO_SELF, 0.5f, ScaleAnimation.RELATIVE_TO_SELF, 0.5f);
+        zoomIn.setDuration(1000);
+
+        together.addAnimation(fadeIn);
+        together.addAnimation(rotate);
+        together.addAnimation(zoomIn);
+
+        imageView.startAnimation(together);
+    }
+
+}
+
+
+canvas.java
+
+package com.example.myapplication;
+
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.util.AttributeSet;
+import android.view.MotionEvent;
+import android.view.View;
+
+public class DrawingView extends View {
+
+    private Paint paint;
+    private Path path;
+    private int currentColor;
+    private int strokeWidth;
+
+    public DrawingView(Context context, AttributeSet attrs) {
+        super(context, attrs);
+        setupDrawing();
+    }
+
+    private void setupDrawing() {
+        path = new Path();
+        paint = new Paint();
+        paint.setColor(Color.BLACK);
+        paint.setAntiAlias(true);
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeJoin(Paint.Join.ROUND);
+        paint.setStrokeCap(Paint.Cap.ROUND);
+        strokeWidth = 5;
+        paint.setStrokeWidth(strokeWidth);
+    }
+
+    @Override
+    protected void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        canvas.drawPath(path, paint);
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        float x = event.getX();
+        float y = event.getY();
+
+        switch (event.getAction()) {
+            case MotionEvent.ACTION_DOWN:
+                path.moveTo(x, y);
+                return true;
+            case MotionEvent.ACTION_MOVE:
+                path.lineTo(x, y);
+                break;
+            case MotionEvent.ACTION_UP:
+                // Do nothing for now
+                break;
+            default:
+                return false;
+        }
+
+        invalidate();
+        return true;
+    }
+
+    public void setColor(int color) {
+        currentColor = color;
+        paint.setColor(color);
+    }
+
+    public void setStrokeWidth(int width) {
+        strokeWidth = width;
+        paint.setStrokeWidth(width);
+    }
+}
+
+
+xml
+
+
+
+aeroplane.java
+package com.example.myapplication;
+
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.widget.Toast;
+public class AirplaneMode extends BroadcastReceiver {
+    @Override
+    public void onReceive(Context context, Intent intent) {
+        if (Intent.ACTION_AIRPLANE_MODE_CHANGED.equals(intent.getAction())) {
+            boolean isAirplaneModeOn = intent.getBooleanExtra("state", false);
+            if (isAirplaneModeOn) {
+                Toast.makeText(context, "Airplane Mode On", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(context, "Airplane Mode Off", Toast.LENGTH_SHORT).show(); }}}}
+
+
+boot.java
+package com.example.myapplication;
+
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.util.Log;
+import android.widget.Toast;
+
+public class BootReceiver extends BroadcastReceiver {
+    @Override
+    public void onReceive(Context context, Intent intent) {
+        Toast.makeText(context.getApplicationContext(), "App started after Booted", Toast.LENGTH_LONG).show();
+    }
+}
+
+
+all4hardware java
+
+package com.example.myapplication;
+import android.annotation.SuppressLint;
+import android.bluetooth.BluetoothAdapter;
+import android.content.Context;
+import android.net.wifi.WifiManager;
+import android.os.Bundle;
+import android.provider.MediaStore;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.Toast;
+import androidx.appcompat.app.AppCompatActivity;
+import android.graphics.Matrix;
+import android.view.MotionEvent;
+import android.view.ScaleGestureDetector;
+
+import com.example.myapplication.R;
+
+public class Hardware extends AppCompatActivity {
+
+    private ImageView imageView3;
+    private ImageView imageView4; // This is imageView4
+    private BluetoothAdapter bluetoothAdapter;
+    Button b15;
+    Button b1;
+    Button button16;
+    private Matrix matrix = new Matrix();
+    private float scale = 1f;
+    private ScaleGestureDetector scaleGestureDetector;
+Button button1;
+    private static final int pic_id = 123;
+
+    @SuppressLint("MissingInflatedId")
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_hardware);
+
+        // Initialize buttons
+        b1 = findViewById(R.id.button);
+        b15 = findViewById(R.id.button15);
+        button16 = findViewById(R.id.button16);
+
+        // Set OnClickListener for button to check Bluetooth status
+        b1.setOnClickListener(v -> checkBluetoothStatus());
+
+        // Set OnClickListener for button15 to check Wi-Fi status
+        b15.setOnClickListener(v -> checkWifiStatus());
+
+        // Get Bluetooth adapter
+        bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
+
+        // Initialize ImageView
+        imageView3 = findViewById(R.id.imageView3);
+        imageView4 = findViewById(R.id.imageView4); // Initialize imageView4
+
+        // Set OnClickListener for button16 to trigger camera capture intent
+        button16.setOnClickListener(v -> {
+            Intent camera_intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+            startActivityForResult(camera_intent, pic_id);
+        });
+        button1=findViewById(R.id.button1);
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Show a toast message when the ImageButton is clicked
+                Intent intent=new Intent(Hardware.this,Sensor.class);
+                startActivity(intent);
+            }
+        });
+
+        // Initialize ScaleGestureDetector
+        scaleGestureDetector = new ScaleGestureDetector(this, new ScaleListener());
+
+        // Set onTouchListener for imageView4
+        imageView4.setOnTouchListener((v, event) -> {
+            scaleGestureDetector.onTouchEvent(event);
+            return true;
+        });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == pic_id) {
+            if (resultCode == RESULT_OK) {
+                Bundle extras = data.getExtras();
+                if (extras != null && extras.containsKey("data")) {
+                    Bitmap photo = (Bitmap) extras.get("data");
+                    if (photo != null) {
+                        imageView3.setImageBitmap(photo);
+                    } else {
+                        Toast.makeText(this, "Failed to capture image", Toast.LENGTH_SHORT).show();
+                    }
+                } else {
+                    Toast.makeText(this, "Failed to get image data", Toast.LENGTH_SHORT).show();
+                }
+            } else {
+                Toast.makeText(this, "Camera capture canceled", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+
+    private void checkBluetoothStatus() {
+        if (bluetoothAdapter == null) {
+            Toast.makeText(this, "Bluetooth not supported", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        if (bluetoothAdapter.isEnabled()) {
+            b1.setBackgroundColor(getResources().getColor(android.R.color.holo_green_light));
+            Toast.makeText(this, "Bluetooth is on", Toast.LENGTH_SHORT).show();
+        } else {
+            b1.setBackgroundColor(getResources().getColor(android.R.color.holo_red_light));
+            Toast.makeText(this, "Bluetooth is off", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void checkWifiStatus() {
+        WifiManager wifiManager = (WifiManager) getApplicationContext().getSystemService(Context.WIFI_SERVICE);
+        if (wifiManager == null) {
+            Toast.makeText(this, "Wi-Fi not supported", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        if (wifiManager.isWifiEnabled()) {
+            b15.setBackgroundColor(getResources().getColor(android.R.color.holo_green_light));
+            Toast.makeText(this, "Wi-Fi is enabled", Toast.LENGTH_SHORT).show();
+        } else {
+            b15.setBackgroundColor(getResources().getColor(android.R.color.holo_red_light));
+            Toast.makeText(this, "Wi-Fi is disabled", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event){
+        scaleGestureDetector.onTouchEvent(event);
+        return super.onTouchEvent(event);
+    }
+
+    private class ScaleListener extends ScaleGestureDetector.SimpleOnScaleGestureListener {
+        @Override
+        public boolean onScale(ScaleGestureDetector detector) {
+            float scaleFactor = detector.getScaleFactor();
+            scale *= scaleFactor;
+            scale = Math.max(0.1f, Math.min(scale, 5.0f));
+            matrix.setScale(scale, scale);
+            imageView4.setImageMatrix(matrix);
+            return true;
+        }
+    }
+}
+
+xml
+
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="131dp"
+        android:layout_height="58dp"
+        android:text="Bluetooth"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.185"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.138" />
+
+    <Button
+        android:id="@+id/button15"
+        android:layout_width="131dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="56dp"
+        android:text="Wifi"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/button"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.138" />
+
+    <TextView
+        android:id="@+id/text1"
+        android:layout_width="175dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="4dp"
+        android:text="BLUETOOTH STATUS"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.112"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="138dp"
+        android:layout_height="46dp"
+        android:layout_marginEnd="20dp"
+        android:text="WIFI STATUS"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="#000000"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toTopOf="@+id/button15"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.708"
+        app:layout_constraintStart_toEndOf="@+id/text1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.517" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="382dp"
+        android:layout_height="219dp"
+        android:background="@color/purple_200"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.551"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.324" />
+
+    <Button
+        android:id="@+id/button16"
+        android:layout_width="145dp"
+        android:layout_height="61dp"
+        android:text="CAPTURE"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.566" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="372dp"
+        android:layout_height="234dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.54"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.972"
+        app:srcCompat="@drawable/planta" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="145dp"
+        android:layout_height="61dp"
+        android:layout_below="@id/button16"
+        android:text="GESTURE"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.677" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+

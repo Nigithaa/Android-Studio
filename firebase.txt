@@ -1,0 +1,593 @@
+mainlogin.xml
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/plantbg"
+    android:orientation="vertical"
+    tools:context=".Login">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+         />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        style=""
+        android:textStyle="bold"
+        android:textColor="#36316A"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="32dp"
+        android:textSize="30sp"
+        android:textAlignment="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="413dp"
+        android:layout_height="790dp"
+        android:orientation="vertical"
+        android:padding="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:layout_constraintVertical_bias="1.0">
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Email"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="12dp"
+            android:background="@color/white"
+            android:ems="10"
+            android:hint="Enter your Email Address"
+            android:inputType="textPersonName"
+            android:padding="12dp"
+            android:textColor="#707070"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:text="Password"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="12dp"
+            android:background="@color/white"
+            android:ems="10"
+            android:hint="Enter your Password"
+            android:inputType="textPersonName"
+            android:padding="12dp"
+            android:textColor="#707070"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/forgotpass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:text="Forgot Password?"
+            android:textAlignment="center"
+            android:textColor="@color/black" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button"
+            style="@android:style/Widget.Button"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10sp"
+            android:background="@color/purple_200"
+            android:text="Login"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/signup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="32dp"
+            android:text="Don't have an account? Signup"
+            android:textAlignment="center"
+            android:textColor="@color/black" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+java
+
+package com.example.myapplication;
+
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.auth.FirebaseAuth;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
+
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+public class Login extends AppCompatActivity {
+    EditText  email;
+    EditText pass;
+    AppCompatButton button;
+    TextView signup , forgotpass;
+    FirebaseAuth auth;
+    SharedPreferences sharedPreferences;
+    private  static final String prefName = "myapp";
+    private  static final String keyEmail = "email";
+    private  static final String keyPass = "password";
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_mainlogin);
+
+        email = findViewById(R.id.email);
+        pass = findViewById(R.id.password);
+        button = findViewById(R.id.button);
+        signup = findViewById(R.id.signup);
+        forgotpass = findViewById(R.id.forgotpass);
+        //FirebaseApp.initializeApp(Login.this); // Initialize Firebase
+        getSupportActionBar().hide();
+        auth = FirebaseAuth.getInstance();
+        sharedPreferences = getSharedPreferences(prefName,MODE_PRIVATE);
+
+
+        forgotpass.setOnClickListener(v->{
+            Intent intent = new Intent(Login.this, ForgotPass.class);
+            startActivity(intent);
+        });
+        button.setOnClickListener(v-> {
+            checkUser();
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putString(keyEmail,email.getText().toString());
+            editor.putString(keyPass,pass.getText().toString());
+            editor.apply();
+        });
+
+        signup.setOnClickListener(v->{
+            Intent intent = new Intent(this, SignUp.class);
+            startActivity(intent);
+        });
+
+//        if ("logout".equals(getIntent().getStringExtra("action"))) {
+//            int notificationId = 1;
+//            NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+//            notificationManager.cancel(notificationId); // Cancel the notification with the specified ID
+//        }
+    }
+
+    public void checkUser(){
+        String usremail = email.getText().toString().trim();
+        String usrpass = pass.getText().toString().trim();
+        if(usremail.isEmpty()){
+            email.setError("Email Empty");
+        }
+
+        if(usrpass.isEmpty()){
+            pass.setError("Password Empty");
+        }
+        if(!usremail.isEmpty() && !usrpass.isEmpty()){
+            auth.signInWithEmailAndPassword(usremail,usrpass).
+                    addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+                        @Override
+                        public void onSuccess(AuthResult authResult) {
+                            Toast.makeText(Login.this, "Login Successful", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(Login.this,MainActivity2.class));
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Toast.makeText(Login.this, "Login Failed", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+        }
+
+    }
+
+}
+
+
+signup
+
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/purple_200"
+    android:orientation="vertical"
+
+    tools:context=".SignUp">
+
+<!--    <ImageView-->
+<!--        android:id="@+id/imageView2"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:scaleType="centerCrop"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="1.0"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintVertical_bias="0.0"-->
+<!--        app:srcCompat="@drawable/plantbg" />-->
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="UserRegistration"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:textSize="30sp"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="408dp"
+        android:layout_height="798dp"
+        android:orientation="vertical"
+        android:padding="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="52sp"
+            android:text="Email"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="12dp"
+            android:ems="10"
+            android:hint="Enter your Email Address"
+            android:inputType="textPersonName"
+            android:padding="12dp"
+android:background="#EA9EEF"
+            android:textColor="#707070"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Password"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="12dp"
+            android:ems="10"
+            android:hint="Enter your Password"
+            android:inputType="textPersonName"
+            android:padding="12dp"
+            android:background="#EA9EEF"
+            android:textColor="#707070"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Confirm Password"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/password1"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="12dp"
+            android:ems="10"
+            android:hint="Re Enter your Password"
+            android:inputType="textPersonName"
+            android:padding="12dp"
+            android:background="#EA9EEF"
+            android:textColor="#707070"
+            android:textSize="18sp" />
+
+        <!--        <TextView-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginTop="32dp"-->
+        <!--            android:text="Forgot Password"-->
+        <!--            android:layout_gravity="center"-->
+        <!--            android:textAlignment="center" />-->
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button"
+            style="@android:style/Widget.Button"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:background="#03A9F4"
+            android:layout_marginTop="20sp"
+            android:text="Confirm"
+            android:textColor="#ffffff"
+            android:textSize="25sp"
+
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+signup.java
+package com.example.myapplication;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
+import android.content.Intent;
+import android.os.Bundle;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+public class SignUp extends AppCompatActivity {
+    EditText  email , pass , pass1;
+    AppCompatButton button;
+    FirebaseAuth auth;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_sign_up);
+
+        email = findViewById(R.id.email);
+        pass = findViewById(R.id.password);
+        pass1 = findViewById(R.id.password1);
+        button = findViewById(R.id.button);
+        auth = FirebaseAuth.getInstance();
+        getSupportActionBar().hide();
+
+        button.setOnClickListener(v->{
+
+            String usremail = email.getText().toString();
+            String usrpass = pass.getText().toString();
+            String repass = pass1.getText().toString();
+
+            if(usrpass.equals(repass)){
+                auth.createUserWithEmailAndPassword(usremail,usrpass).addOnCompleteListener(
+                        new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                if(task.isSuccessful()){
+                                    Toast.makeText(SignUp.this, "Verify the Email Address", Toast.LENGTH_SHORT).show();
+                                    auth.getCurrentUser().sendEmailVerification().addOnCompleteListener(
+                                            new OnCompleteListener<Void>() {
+                                                @Override
+                                                public void onComplete(@NonNull Task<Void> task) {
+                                                    Toast.makeText(SignUp.this, "Account Created Successfully", Toast.LENGTH_SHORT).show();
+                                                    Intent intent = new Intent(SignUp.this,Login.class);
+                                                    startActivity(intent);
+                                                }
+                                            }
+                                    );
+                                }
+                                else{
+                                    Toast.makeText(SignUp.this, "Signup Failed", Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        }
+                );
+            }
+            else{
+                Toast.makeText(this, "Passwords doesn't Match", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+    }
+}
+
+forgotpassword
+
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="#ECB5B5"
+    android:orientation="vertical"
+    tools:context=".ForgotPass">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+         />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Forgot Password"
+        android:textStyle="bold"
+        android:textColor="#1B1C23"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:textSize="30sp"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="408dp"
+        android:layout_height="780dp"
+        android:orientation="vertical"
+        android:padding="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2">
+
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="102sp"
+            android:text="Email"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="12dp"
+            android:ems="10"
+            android:hint="Enter your Email Address"
+            android:inputType="textPersonName"
+            android:padding="12dp"
+android:background="@color/white"
+            android:textColor="#707070"
+            android:textSize="18sp" />
+
+
+        <!--        <TextView-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginTop="32dp"-->
+        <!--            android:text="Forgot Password"-->
+        <!--            android:layout_gravity="center"-->
+        <!--            android:textAlignment="center" />-->
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button"
+            style="@android:style/Widget.Button"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:background="#6552D1"
+            android:layout_marginTop="20sp"
+            android:text="Send Email"
+            android:textColor="#ffffff"
+            android:textSize="25sp"
+
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+java
+
+package com.example.myapplication;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.arch.core.executor.ArchTaskExecutor;
+import com.google.firebase.auth.FirebaseAuth;
+
+import android.os.Bundle;
+import android.util.Log;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+
+public class ForgotPass extends AppCompatActivity {
+    EditText email;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_forgot_pass);
+        email = findViewById(R.id.email);
+        Button but = findViewById(R.id.button);
+        but.setOnClickListener(v-> {
+
+            FirebaseAuth.getInstance().sendPasswordResetEmail(email.getText().toString())
+                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            if (task.isSuccessful()) {
+                                Toast.makeText(ForgotPass.this, "Email Sent Successfully", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    });
+        });
+
+
+    }
+}
+
+
